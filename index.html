@@ -4,37 +4,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Michelangelo Ad Spaces</title>
+    <title>Michelangelo</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <header>
+    <header class="header">
         <div class="logo">Michelangelo</div>
-        <nav>
-            <div class="hamburger-menu" onclick="toggleMenu()">☰</div>
-            <ul id="nav-links" class="hidden">
+        <div class="hamburger-menu" onclick="toggleMenu()">☰</div>
+        <nav id="nav-links" class="hidden">
+            <ul>
                 <li><a href="#home" onclick="toggleMenu()">Home</a></li>
-                <li><a href="#about" onclick="toggleMenu()">All About Me</a></li>
+                <li><a href="#works" onclick="toggleMenu()">Works</a></li>
+                <li><a href="#life" onclick="toggleMenu()">Life</a></li>
+                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="home" class="section home-section">
-            <!-- Add your homepage content here -->
+        <section id="home" class="section">
+            <!-- Add content about Michelangelo's introduction or homepage here -->
+            <h1>Home Section</h1>
+            <p>Write an overview of Michelangelo's life and achievements here.</p>
         </section>
-        <section id="about" class="section about-section">
-            <!-- Add content about Michelangelo here -->
+        <section id="works" class="section">
+            <!-- Add content about Michelangelo's works here -->
+            <h1>Works Section</h1>
+            <p>Describe Michelangelo's famous artworks and sculptures here.</p>
+        </section>
+        <section id="life" class="section">
+            <!-- Add content about Michelangelo's life here -->
+            <h1>Life Section</h1>
+            <p>Include details about Michelangelo's biography and influence here.</p>
+        </section>
+        <section id="contact" class="section">
+            <!-- Add contact details or a form here -->
+            <h1>Contact Section</h1>
+            <p>Provide ways to connect or learn more here.</p>
         </section>
     </main>
 
-    <footer>
+    <footer class="footer">
         <!-- Add footer content here -->
+        <p>&copy; 2025 Michelangelo. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>
 </body>
 
 </html>
-                                        
