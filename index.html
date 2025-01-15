@@ -12,12 +12,17 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three/examples/js/loaders/STLLoader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r110/examples/js/controls/OrbitControls.js"></script>
 </head>
 
 <body>
     <header class="header">
         <div class="logo">All about Michelangelo</div>
-        <div class="hamburger-menu" onclick="toggleMenu()">☰</div>
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <nav id="nav-links" class="hidden">
             <ul>
                 <li><a href="#home" onclick="toggleMenu()">Home</a></li>
@@ -89,51 +94,7 @@
         <p>&copy; 2025 Michelangelo. All rights reserved. By Thomas Jenkins.</p>
     </footer>
 
-    <script>
-        // Function for toggling menu
-        function toggleMenu() {
-            const navLinks = document.getElementById('nav-links');
-            navLinks.classList.toggle('hidden');
-        }
-
-        // Three.js 3D Model Rendering
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / 500, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer();
-        renderer.setSize(window.innerWidth, 500);
-        document.getElementById('3d-container').appendChild(renderer.domElement);
-
-        // Lighting
-        const light = new THREE.PointLight(0xffffff, 1, 100);
-        light.position.set(10, 10, 10);
-        scene.add(light);
-
-        const ambientLight = new THREE.AmbientLight(0x404040, 1.5);
-        scene.add(ambientLight);
-
-        // Load STL Model
-        const loader = new THREE.STLLoader();
-        loader.load('model.stl', function (geometry) {
-            const material = new THREE.MeshStandardMaterial({ color: 0x0077ff });
-            const mesh = new THREE.Mesh(geometry, material);
-            scene.add(mesh);
-
-            // Center and scale the model
-            geometry.center();
-            mesh.scale.set(0.5, 0.5, 0.5);
-            mesh.rotation.x = -Math.PI / 2;
-        });
-
-        // Set camera position
-        camera.position.z = 5;
-
-        // Animation loop
-        function animate() {
-            requestAnimationFrame(animate);
-            renderer.render(scene, camera);
-        }
-        animate();
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
