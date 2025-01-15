@@ -2,12 +2,10 @@
 <html lang="en">
 
 <head>
-    <!-- Touch and Favicon Icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="manifest" href="site.webmanifest">
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All about Michelangelo</title>
@@ -16,21 +14,24 @@
 
 <body>
     <header class="header">
-        <div class="logo">All about Michelangelo</div>
-        <div class="hamburger-menu" onclick="toggleMenu()">☰</div>
+        <div class="logo">Michelangelo</div>
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </div>
         <nav id="nav-links" class="hidden">
             <ul>
                 <li><a href="#home" onclick="toggleMenu()">Home</a></li>
                 <li><a href="#works" onclick="toggleMenu()">Works</a></li>
-                <li><a href="#life" onclick="toggleMenu()">Life</a></li>
-                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+                <li><a href="#sistine" onclick="toggleMenu()">Sistine Chapel</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <!-- Cover Section -->
-        <section id="home" class="section cover-section">
+        <section id="home" class="section cover-section parallax">
             <div class="overlay">
                 <h1>Michelangelo</h1>
                 <p>Renaissance Genius, Sculptor, Painter, Architect</p>
@@ -51,23 +52,21 @@
             </div>
         </section>
 
-        <!-- Life Section -->
-        <section id="life" class="section">
-            <h1>Life</h1>
-            <div class="content">
-                <div class="images">
-                    <img src="life1.jpg" alt="Life Image">
-                </div>
-                <div class="text">
-                    <p>Include details about Michelangelo's biography and influence.</p>
-                </div>
+        <!-- Sistine Chapel Section -->
+        <section id="sistine" class="section">
+            <h1>Sistine Chapel</h1>
+            <div class="subsection">
+                <h2>The Creation of Adam</h2>
+                <p>Add information about this iconic fresco.</p>
             </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="section">
-            <h1>Contact</h1>
-            <p>Provide ways to connect or learn more here.</p>
+            <div class="subsection">
+                <h2>The Last Judgment</h2>
+                <p>Add information about this masterpiece.</p>
+            </div>
+            <div class="subsection">
+                <h2>The Ceiling Frescoes</h2>
+                <p>Add details about the overall ceiling artwork.</p>
+            </div>
         </section>
     </main>
 
