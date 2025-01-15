@@ -2,16 +2,16 @@
 <html lang="en">
 
 <head>
-    <!-- Touch and Favicon Icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="manifest" href="site.webmanifest">
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All about Michelangelo</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three/examples/js/loaders/STLLoader.js"></script>
 </head>
 
 <body>
@@ -24,6 +24,7 @@
                 <li><a href="#works" onclick="toggleMenu()">Works</a></li>
                 <li><a href="#life" onclick="toggleMenu()">Life</a></li>
                 <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+                <li><a href="#model" onclick="toggleMenu()">3D Model</a></li>
             </ul>
         </nav>
     </header>
@@ -64,6 +65,19 @@
             </div>
         </section>
 
+        <!-- 3D Model Section -->
+        <section id="model" class="section">
+            <h1>3D Model</h1>
+            <p>Explore an interactive 3D model of Michelangelo's Statue of David below:</p>
+            <div id="3d-container" style="width: 100%; height: 500px;"></div>
+            <div class="model-description">
+                <h2>About the Statue of David</h2>
+                <p>The Statue of David is a masterpiece of Renaissance sculpture. 
+                Created between 1501 and 1504, it stands as a symbol of strength, beauty, and perfection.</p>
+                <p>Michelangelo's David represents the biblical hero just before his battle with Goliath, embodying human determination and grace.</p>
+            </div>
+        </section>
+
         <!-- Contact Section -->
         <section id="contact" class="section">
             <h1>Contact</h1>
@@ -75,7 +89,51 @@
         <p>&copy; 2025 Michelangelo. All rights reserved. By Thomas Jenkins.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Function for toggling menu
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('hidden');
+        }
+
+        // Three.js 3D Model Rendering
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / 500, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, 500);
+        document.getElementById('3d-container').appendChild(renderer.domElement);
+
+        // Lighting
+        const light = new THREE.PointLight(0xffffff, 1, 100);
+        light.position.set(10, 10, 10);
+        scene.add(light);
+
+        const ambientLight = new THREE.AmbientLight(0x404040, 1.5);
+        scene.add(ambientLight);
+
+        // Load STL Model
+        const loader = new THREE.STLLoader();
+        loader.load('model.stl', function (geometry) {
+            const material = new THREE.MeshStandardMaterial({ color: 0x0077ff });
+            const mesh = new THREE.Mesh(geometry, material);
+            scene.add(mesh);
+
+            // Center and scale the model
+            geometry.center();
+            mesh.scale.set(0.5, 0.5, 0.5);
+            mesh.rotation.x = -Math.PI / 2;
+        });
+
+        // Set camera position
+        camera.position.z = 5;
+
+        // Animation loop
+        function animate() {
+            requestAnimationFrame(animate);
+            renderer.render(scene, camera);
+        }
+        animate();
+    </script>
 </body>
 
 </html>
