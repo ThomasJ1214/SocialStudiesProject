@@ -4,16 +4,6 @@ function toggleMenu() {
     navLinks.classList.toggle('hidden');
 }
 
-// Add parallax scrolling for the Cover section
-document.addEventListener('scroll', () => {
-    const parallaxElements = document.querySelectorAll('.parallax');
-    parallaxElements.forEach((el) => {
-        const speed = el.getAttribute('data-speed');
-        const offset = window.pageYOffset * speed;
-        el.style.backgroundPositionY = `${offset}px`;
-    });
-});
-
 // Add animations for Sistine Chapel subsections when they come into view
 const observerOptions = {
     threshold: 0.1,
