@@ -1,32 +1,29 @@
-/* Parallax Effect */
-.parallax {
-    position: relative;
-    overflow: hidden;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-}
-
-.section {
-    padding: 60px 20px;
-    background-color: rgba(0, 0, 0, 0.8); /* Fallback color */
-    color: white;
-    text-align: center;
-}
-
-/* Subsections */
+/* Sistine Chapel Section */
 .subsection {
-    padding: 60px 20px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+}
+
+.subsection h2 {
+    width: 100%;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.subsection .content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    text-align: center;
 }
 
 .subsection img {
     max-width: 100%;
     height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-}
-
-.subsection p {
-    font-size: 18px;
-    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
