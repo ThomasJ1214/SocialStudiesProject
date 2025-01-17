@@ -17,7 +17,7 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Header */
+/* Header Styles */
 .header {
     position: sticky;
     top: 0;
@@ -90,10 +90,26 @@ nav ul {
 /* Section Styles */
 .section {
     padding: 60px 20px;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.8); /* Fallback color */
     text-align: center;
 }
 
+/* Works Section */
+#works .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#works .images img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Life Section */
 #life .content {
     display: flex;
     flex-direction: column;
@@ -102,7 +118,7 @@ nav ul {
 }
 
 #life .images img {
-    max-width: 80%;
+    max-width: 80%; /* Ensures the image fits within the section */
     height: auto;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
@@ -112,5 +128,24 @@ nav ul {
     font-size: 18px;
     line-height: 1.6;
     text-align: center;
-    max-width: 800px;
+    max-width: 800px; /* Restricts the text width for readability */
+}
+
+/* Sistine Chapel Section */
+.subsection img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Footer Styles */
+.footer {
+    text-align: center; /* Center text horizontally */
+    padding: 20px;
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border-top: 1px solid #333333;
+    position: relative; /* Ensures proper placement */
+    margin-top: 40px; /* Adds spacing from content above */
 }
