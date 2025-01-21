@@ -5,7 +5,7 @@ body {
     padding: 0;
     background-color: #121212;
     color: #ffffff;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 a {
@@ -17,7 +17,7 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Header Styles */
+/* Header */
 .header {
     position: sticky;
     top: 0;
@@ -92,6 +92,7 @@ nav ul {
     padding: 60px 20px;
     background-color: rgba(0, 0, 0, 0.8); /* Fallback color */
     text-align: center;
+    overflow: hidden; /* Prevent content overflow */
 }
 
 /* Works Section */
@@ -102,11 +103,12 @@ nav ul {
     gap: 20px;
 }
 
-#works .images img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+#works .text {
+    max-width: 800px;
+    text-align: center;
+    line-height: 1.6;
+    font-size: 18px;
+    margin: 0 auto;
 }
 
 /* Life Section */
@@ -117,26 +119,39 @@ nav ul {
     gap: 20px;
 }
 
-#life .images img {
-    max-width: 80%; /* Ensures the image fits within the section */
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-}
-
 #life .text {
-    font-size: 18px;
-    line-height: 1.6;
+    max-width: 800px;
     text-align: center;
-    max-width: 800px; /* Restricts the text width for readability */
+    line-height: 1.6;
+    font-size: 18px;
+    margin: 0 auto;
 }
 
 /* Sistine Chapel Section */
-.subsection img {
+#sistine .subsection {
+    margin-bottom: 40px;
+}
+
+#sistine .subsection .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#sistine .subsection .content img {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+#sistine .subsection .content p {
+    max-width: 800px;
+    text-align: center;
+    line-height: 1.6;
+    font-size: 18px;
+    margin: 0 auto;
 }
 
 /* Footer Styles */
@@ -146,6 +161,5 @@ nav ul {
     background-color: #1e1e1e;
     color: #ffffff;
     border-top: 1px solid #333333;
-    position: relative; /* Ensures proper placement */
     margin-top: 40px; /* Adds spacing from content above */
 }
