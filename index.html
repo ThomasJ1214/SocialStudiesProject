@@ -6,8 +6,8 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="manifest" href="site.webmanifest">
+    <meta charset="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All about Michelangelo</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -24,8 +24,8 @@
         <nav id="nav-links" class="hidden">
             <ul>
                 <li><a href="#home" onclick="toggleMenu()">Home</a></li>
-                <li><a href="#works" onclick="toggleMenu()">Works</a></li>
                 <li><a href="#life" onclick="toggleMenu()">Life</a></li>
+                <li><a href="#works" onclick="toggleMenu()">Works</a></li>
                 <li><a href="#sistine" onclick="toggleMenu()">Sistine Chapel</a></li>
             </ul>
         </nav>
@@ -34,14 +34,27 @@
     <!-- Main Content -->
     <main>
         <!-- Cover Section -->
-        <section id="home" class="section cover-section parallax">
+        <section id="home" class="section cover-section">
             <div class="overlay">
                 <h1>Michelangelo</h1>
                 <p>Renaissance Genius, Sculptor, Painter, Architect</p>
             </div>
         </section>
 
-        <!-- Works Section -->
+        <!-- Life Section (Now First After Cover) -->
+        <section id="life" class="section">
+            <h1>Life</h1>
+            <div class="content">
+                <div class="images">
+                    <img src="life1.jpg" alt="Life Image">
+                </div>
+                <div class="text">
+                    <p>Include details about Michelangelo's biography and influence here.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Works Section (Now Second After Cover) -->
         <section id="works" class="section">
             <h1>Works</h1>
             <div class="content">
@@ -51,19 +64,6 @@
                 <div class="images">
                     <img src="work1.jpg" alt="Work 1">
                     <img src="work2.jpg" alt="Work 2">
-                </div>
-            </div>
-        </section>
-
-        <!-- Life Section -->
-        <section id="life" class="section">
-            <h1>Life</h1>
-            <div class="content">
-                <div class="images">
-                    <img src="life1.jpg" alt="Life Image">
-                </div>
-                <div class="text">
-                    <p>Include details about Michelangelo's biography and influence here.</p>
                 </div>
             </div>
         </section>
